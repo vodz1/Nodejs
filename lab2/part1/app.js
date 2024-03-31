@@ -1,4 +1,3 @@
-// app.js
 const { emitEvent, onEvent } = require('./myModule');
 
 // Callback for 'userLoggedIn' event
