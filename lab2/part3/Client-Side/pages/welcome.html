@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li span {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="card">
+            <p>Thank you for submitting your information.</p>
+            <p>Your information</p>
+            <ul>
+                <li>Name: <span id="name">{UserName}</span></li>
+                <li>Email: <span id="email">{Email}</span></li>
+                <li>Address: <span id="address">{Address}</span></li>
+                <li>Phone: <span id="phone">{Phone}</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+            // Replace + with empty space in the name, replace %40 with @ in the email, and replace + with empty space in the address
+            const nameElement = document.getElementById("name");
+            const emailElement = document.getElementById("email");
+            const addressElement = document.getElementById("address");
+
+            if (nameElement && emailElement && addressElement) {
+                nameElement.textContent = nameElement.textContent.replace(/\+/g, ' ');
+                emailElement.textContent = emailElement.textContent.replace(/%40/g, '@');
+                addressElement.textContent = addressElement.textContent.replace(/\+/g, ' ');
+            }
+        });
+    </script>
+</body>
+</html>
